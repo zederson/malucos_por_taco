@@ -1,8 +1,8 @@
 jQuery(function($) { 'use strict',
 
   //Countdown js
-  $("#countdown").countdown({ date: "2 Sep 2017 9:00:00", format: "on" }, function() { });
-  $('#countdown_output').text('02/09/2017')
+  $("#countdown").countdown({ date: "26 Aug 2017 9:00:00", format: "on" }, function() { });
+  $('#countdown_output').text('26/08/2017')
 
   //Scroll Menu
 
@@ -29,7 +29,7 @@ jQuery(function($) { 'use strict',
 
   // Carousel Auto Slide Off
   $('#event-carousel, #twitter-feed, #sponsor-carousel ').carousel({
-    interval: 2000
+    interval: 5000
   });
 
   $(".carousel").on("touchstart", function(event){
