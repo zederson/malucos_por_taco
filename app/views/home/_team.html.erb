@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-9">
+      <div id="event-carousel" class="carousel slide" data-interval="true">
+        <h2 class="heading">Jogadores</h2>
+        <a class="even-control-left" href="#event-carousel" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+        <a class="even-control-right" href="#event-carousel" data-slide="next"><i class="fa fa-angle-right"></i></a>
+        <div class="carousel-inner">
+          <div class="item active">
+            <div class="row">
+              <%= render partial: 'player', locals: { player: { image: 'event1.jpg', name: 'Marco'} } %>
+              <%= render partial: 'player', locals: { player: { image: 'event2.jpg', name: 'Anselmo'} } %>
+              <%= render partial: 'player', locals: { player: { image: 'event3.jpg', name: 'Zé'} } %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <%= render partial: 'player', locals: { player: { image: 'event4.jpg', name: 'Rogério'} } %>
+              <%= render partial: 'player', locals: { player: { image: 'event5.jpg', name: 'Cá'} } %>
+              <%= render partial: 'player', locals: { player: { image: 'event6.jpg', name: 'Felipe'} } %>
+            </div>
+          </div>
+          <div class="item">
+            <div class="row">
+              <%= render partial: 'player', locals: { player: { image: 'event7.jpg', name: 'Fábio'} } %>
+              <%= render partial: 'player', locals: { player: { image: 'event8.jpg', name: 'Sidnei'} } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="guitar">
+      <img class="img-responsive" src="images/choop.png" alt="malucos por taco">
+    </div>
+  </div>
+</div>
+

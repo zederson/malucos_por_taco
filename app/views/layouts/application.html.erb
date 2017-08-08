@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MalucosPorTaco</title>
+    <title>Malucos por Taco</title>
+    <meta name="description" content="Malucos por Taco">
+    <meta name="author" content="Ederson de Lima">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -10,5 +12,9 @@
 
   <body>
     <%= yield %>
+
+    <script type='text/javascript'>
+      <%= yield :javascript %>
+    </script>
   </body>
 </html>
