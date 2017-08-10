@@ -12,21 +12,11 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-      <%= render 'layouts/top_navigation' %>
-    </nav>
-
-    <div class="container-fluid">
-      <div class="row">
-        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
-          <%= render 'layouts/menu' %>
-        </nav>
-
-        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
-          <%= yield %>
-        </main>
-      </div>
-    </div>
+    <% if user_signed_in? %>
+      <%= render 'layouts/main' %>
+    <% else %>
+      <%= render 'layouts/login' %>
+    <% end %>
 
     <%= javascript_include_tag 'application' %>
 

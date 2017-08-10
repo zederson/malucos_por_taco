@@ -15,4 +15,10 @@
       <a class="nav-link" href="#">Help</a>
     </li>
   </ul>
+
+  <% if user_signed_in? %>
+    <li>
+      <%= link_to('Sair', destroy_user_session_path, method: :delete, class: 'btn btn-outline-success my-2 my-sm-0') %>
+    </li>
+  <% end %>
 </div>
