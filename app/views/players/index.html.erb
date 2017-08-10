@@ -1,0 +1,18 @@
+<h1 class="text-info">Jogadores</h1>
+
+<%= link_to 'Novo', new_player_path, class: 'btn btn-outline-info' %>
+<hr>
+
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Apelido</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'player', collection: @players %>
+  </tbody>
+</table>

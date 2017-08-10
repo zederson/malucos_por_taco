@@ -1,0 +1,14 @@
+<%= form_for player do |f| %>
+  <div class="form-group <%= errors_for player, :name %>">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true, placeholder: 'Nome do jogador', class: 'form-control' %>
+    <%= print_errors player, :name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :nick_name %>
+    <%= f.text_field :nick_name, placeholder: 'Apelido do jogador', class: 'form-control' %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
