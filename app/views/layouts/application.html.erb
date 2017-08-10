@@ -4,14 +4,31 @@
     <title>Malucos por Taco</title>
     <meta name="description" content="Malucos por Taco">
     <meta name="author" content="Ederson de Lima">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+      <%= render 'layouts/top_navigation' %>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+          <%= render 'layouts/menu' %>
+        </nav>
+
+        <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+          <%= yield %>
+        </main>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
 
     <script type='text/javascript'>
       <%= yield :javascript %>

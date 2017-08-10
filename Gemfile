@@ -9,6 +9,7 @@ gem 'rails'    , '~> 5.1.3'
 gem 'puma'     , '~> 3.7'
 gem 'uglifier' , '>= 1.3.0'
 gem 'jbuilder' , '~> 2.5'
+gem 'jquery-rails'
 gem 'sqlite3'
 
 group :development, :test do

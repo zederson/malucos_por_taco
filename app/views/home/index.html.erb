@@ -1,45 +1,83 @@
-<section id="home">
-  <div id="main-slider" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-      <li data-target="#main-slider" data-slide-to="1"></li>
-      <li data-target="#main-slider" data-slide-to="2"></li>
-      <li data-target="#main-slider" data-slide-to="3"></li>
-      <li data-target="#main-slider" data-slide-to="4"></li>
-      <li data-target="#main-slider" data-slide-to="5"></li>
-      <li data-target="#main-slider" data-slide-to="6"></li>
-      <li data-target="#main-slider" data-slide-to="7"></li>
-      <li data-target="#main-slider" data-slide-to="8"></li>
-    </ol>
+  <h1>Dashboard</h1>
 
-    <div class="carousel-inner">
-      <%= render 'slider' %>
+  <section class="row text-center placeholders">
+    <div class="col-6 col-sm-3 placeholder">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+      <h4>Label</h4>
+      <div class="text-muted">Something else</div>
     </div>
+    <div class="col-6 col-sm-3 placeholder">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+      <h4>Label</h4>
+      <span class="text-muted">Something else</span>
+    </div>
+    <div class="col-6 col-sm-3 placeholder">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+      <h4>Label</h4>
+      <span class="text-muted">Something else</span>
+    </div>
+    <div class="col-6 col-sm-3 placeholder">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+      <h4>Label</h4>
+      <span class="text-muted">Something else</span>
+    </div>
+  </section>
+
+  <h2>Section title</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Header</th>
+          <th>Header</th>
+          <th>Header</th>
+          <th>Header</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1,001</td>
+          <td>Lorem</td>
+          <td>ipsum</td>
+          <td>dolor</td>
+          <td>sit</td>
+        </tr>
+        <tr>
+          <td>1,015</td>
+          <td>sodales</td>
+          <td>ligula</td>
+          <td>in</td>
+          <td>libero</td>
+        </tr>
+        <tr>
+          <td>1,001</td>
+          <td>Lorem</td>
+          <td>ipsum</td>
+          <td>dolor</td>
+          <td>sit</td>
+        </tr>
+        <tr>
+          <td>1,015</td>
+          <td>sodales</td>
+          <td>ligula</td>
+          <td>in</td>
+          <td>libero</td>
+        </tr>
+        <tr>
+          <td>1,001</td>
+          <td>Lorem</td>
+          <td>ipsum</td>
+          <td>dolor</td>
+          <td>sit</td>
+        </tr>
+        <tr>
+          <td>1,015</td>
+          <td>sodales</td>
+          <td>ligula</td>
+          <td>in</td>
+          <td>libero</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</section>
-
-<section id="explore">
-  <%= render 'countdown' %>
-</section>
-
-<section id="event">
-  <%= render 'team' %>
-</section>
-
-<section id="about">
-  <%= render 'about' %>
-</section>
-
-<section id="twitter">
-  <%= render 'twitter' %>
-</section>
-
-<section id="contact">
-  <div id="map">
-    <div id="gmap-wrap">
-      <div id="gmap">
-      </div>
-    </div>
-  </div><!--/#map-->
-  <%= render 'contact' %>
-</section>
