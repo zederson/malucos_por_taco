@@ -10,11 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810161225) do
+ActiveRecord::Schema.define(version: 20170811003602) do
+
+  create_table "integrants", id: false, force: :cascade do |t|
+    t.integer "team_id"
+    t.integer "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_integrants_on_player_id"
+    t.index ["team_id"], name: "index_integrants_on_team_id"
+  end
+
+  create_table "matches", force: :cascade do |t|
+    t.datetime "started_at"
+    t.datetime "finished_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.string "nick_name"
+  end
+
+  create_table "scouts", force: :cascade do |t|
+    t.integer "run"
+    t.integer "back"
+    t.integer "lost_ball"
+    t.integer "bat_delivery"
+    t.integer "house"
+    t.integer "burned"
+    t.integer "victory"
+    t.integer "concierge"
+    t.integer "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "match_id"
+    t.index ["match_id"], name: "index_scouts_on_match_id"
+    t.index ["team_id"], name: "index_scouts_on_team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
