@@ -1,0 +1,81 @@
+<div class="card">
+  <div class="card-header" role="tab" id="heading_<%= team_label %>">
+    <h5 class="mb-0">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapse_<%= team_label %>" aria-expanded="false" aria-controls="collapse_<%= team_label %>">
+        Time <%= team_label.upcase  %>
+      </a>
+    </h5>
+  </div>
+
+  <div id="collapse_<%= team_label %>" class="collapse show" role="tabpanel" aria-labelledby="heading_<%= team_label %>">
+    <div class="card-block">
+      <%= fields_for "player_#{team_label}", scout.team.players.first, index: 1 do |players_form| %>
+        <div class="row">
+          <div class="col-sm-5 col-md-5">
+            <%= players_form.collection_select(:nick_name, match.players_for_select, :id, :nick_name, { include_blank: 'Escolha o Jogador' }, class: 'form-control custom-select') %>
+          </div>
+        <% end %>
+
+        <div class="col text-center"> e </div>
+
+        <%= fields_for "player_#{team_label}", scout.team.players.last, index: 2 do |players_form| %>
+          <div class="col-sm-5 col-md-5">
+            <%= players_form.collection_select(:nick_name, match.players_for_select, :id, :nick_name, { include_blank: 'Escolha o Jogador' }, class: 'form-control custom-select') %>
+          </div>
+        </div>
+      <% end %>
+
+      <hr> <h3> Taco </h3>
+
+      <%= fields_for "scout_#{team_label}", scout do |scout_form| %>
+
+        <div class="row">
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :run %>
+            <%= scout_form.number_field :run, class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :back %>
+            <%= scout_form.number_field :back, class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :lost_ball %>
+            <%= scout_form.number_field :lost_ball, class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :bat_delivery %>
+            <%= scout_form.number_field :bat_delivery, class: 'form-control' %>
+          </div>
+        </div>
+
+       <h3> Arremesso </h3>
+        <div class="row">
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :house %>
+            <%= scout_form.number_field :house, class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :burned %>
+            <%= scout_form.number_field :burned, class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :victory %>
+            <%= scout_form.number_field :victory, class: 'form-control' %>
+          </div>
+
+          <div class="form-group col-sm-2 col-6">
+            <%= scout_form.label :concierge %>
+            <%= scout_form.number_field :concierge, class: 'form-control' %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+

@@ -12,6 +12,7 @@ gem 'jbuilder' , '~> 2.5'
 gem 'jquery-rails'
 gem 'sqlite3'
 gem 'devise'
+gem 'draper'
 
 group :development, :test do
   gem 'pry-rails'
