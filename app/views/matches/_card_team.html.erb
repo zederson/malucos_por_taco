@@ -12,7 +12,7 @@
       <%= fields_for "player_#{team_label}", scout.team.players.first, index: 1 do |players_form| %>
         <div class="row">
           <div class="col-sm-5 col-md-5">
-            <%= players_form.collection_select(:nick_name, match.players_for_select, :id, :nick_name, { include_blank: 'Escolha o Jogador' }, class: 'form-control custom-select') %>
+            <%= players_form.collection_select(:id, match.players_for_select, :id, :nick_name, { include_blank: 'Escolha o Jogador' }, class: 'form-control custom-select') %>
           </div>
         <% end %>
 
@@ -20,7 +20,7 @@
 
         <%= fields_for "player_#{team_label}", scout.team.players.last, index: 2 do |players_form| %>
           <div class="col-sm-5 col-md-5">
-            <%= players_form.collection_select(:nick_name, match.players_for_select, :id, :nick_name, { include_blank: 'Escolha o Jogador' }, class: 'form-control custom-select') %>
+            <%= players_form.collection_select(:id, match.players_for_select, :id, :nick_name, { include_blank: 'Escolha o Jogador' }, class: 'form-control custom-select') %>
           </div>
         </div>
       <% end %>
