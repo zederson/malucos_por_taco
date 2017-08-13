@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def flash_keys(key)
     values = {
       success: 'alert-success',
@@ -12,7 +11,7 @@ module ApplicationHelper
 
   def errors_for(object, attribute)
     return if object && object.errors.empty?
-    'has-danger' if object.errors.has_key? attribute
+    'has-danger' if object.errors.key? attribute
   end
 
   def print_errors(object, attribute)

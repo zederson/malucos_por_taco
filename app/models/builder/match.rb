@@ -1,6 +1,5 @@
 module Builder
   class Match
-
     def self.build_match
       ::Match.new.tap do |m|
         2.times { m.scouts.build }

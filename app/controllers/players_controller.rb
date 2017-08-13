@@ -20,8 +20,7 @@ class PlayersController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @player.update(player_params)

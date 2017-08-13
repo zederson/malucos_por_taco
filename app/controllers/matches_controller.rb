@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
-
   def index
+    @matches = Match.recents.decorate
   end
 
   def new
@@ -8,8 +8,16 @@ class MatchesController < ApplicationController
   end
 
   def create
-    match = Match.new(match_params)
-    binding.pry
+    scouts = ('a'..'b').map { |v| scout_params v }
+    teams  = ('a'..'b').map { |v| player_params v }
+    @match = Match::CreatorService.new(match_params, scouts, teams).create
+
+    if @match
+      flash[:success] = 'Cadastro realizado com sucesso'
+      redirect_to matches_path
+    else
+      render :new
+    end
   end
 
   private
