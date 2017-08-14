@@ -226,11 +226,10 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  capybara (~> 2.13)
+  capybara
   database_cleaner
   devise
   draper
-  factory_girl
   factory_girl_rails
   faker
   jbuilder (~> 2.5)
