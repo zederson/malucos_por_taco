@@ -6,17 +6,11 @@ class MatchDecorator < Draper::Decorator
   end
 
   def title_for_first_team
-    h.content_tag :div do
-      h.concat(h.content_tag(:i, '', class: 'fa fa-trophy text-success')) if winner?(scouts.first)
-      h.concat(title_for_teams :first)
-    end
+    build_title_for_team :first
   end
 
   def title_for_second_team
-    h.content_tag :div do
-      h.concat(h.content_tag(:i, ' ', class: 'fa fa-trophy text-success')) if winner?(scouts.last)
-      h.concat(title_for_teams :last)
-    end
+    build_title_for_team :last
   end
 
   def scout_first_team
@@ -36,6 +30,13 @@ class MatchDecorator < Draper::Decorator
   end
 
   private
+
+  def build_title_for_team(trigger)
+    h.content_tag :div do
+      h.concat(h.content_tag(:i, '', class: 'fa fa-trophy text-success')) if winner?(scouts.send(trigger))
+      h.concat(title_for_teams trigger)
+    end
+  end
 
   def title_for_teams(trigger)
     players = scouts.send(trigger).team.players

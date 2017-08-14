@@ -16,7 +16,7 @@ FactoryGirl.define do
       create_list(:integrant, 2, team: second_team)
 
       create(:scout, match: match_created, team: first_team)
-      create(:scout, match: match_created, team: second_team, run: 6)
+      create(:scout, match: match_created, team: second_team, run: 2)
     end
   end
 end
