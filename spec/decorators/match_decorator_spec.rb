@@ -8,7 +8,7 @@ RSpec.describe MatchDecorator do
     let(:match) { create(:complete_match) }
     let(:score) { match.scouts.first.score.to_s }
 
-    subject  { decorator.score_first_team }
+    subject { decorator.score_first_team }
 
     it { is_expected.to eq score }
 
@@ -23,7 +23,7 @@ RSpec.describe MatchDecorator do
   describe '#score_second_team' do
     let(:match) { create(:complete_match) }
     let(:score) { '04' }
-    subject  { decorator.score_second_team }
+    subject { decorator.score_second_team }
 
     it { is_expected.to eq score }
   end
@@ -35,14 +35,14 @@ RSpec.describe MatchDecorator do
   end
 
   describe '#scout_first_team' do
-    let(:match)   { create(:complete_match) }
-    subject  { decorator.scout_first_team }
+    let(:match) { create(:complete_match) }
+    subject { decorator.scout_first_team }
     it { is_expected.to eq match.scouts.first }
   end
 
   describe '#scout_second_team' do
-    let(:match)   { create(:complete_match) }
-    subject  { decorator.scout_second_team }
+    let(:match) { create(:complete_match) }
+    subject { decorator.scout_second_team }
     it { is_expected.to eq match.scouts.last }
   end
 
@@ -59,7 +59,7 @@ RSpec.describe MatchDecorator do
     end
 
     context 'when winner' do
-      let(:title)   { "<div><i class=\"fa fa-trophy text-success\"></i>#{players.first.title} - #{players.last.title}</div>" }
+      let(:title) { "<div><i class=\"fa fa-trophy text-success\"></i>#{players.first.title} - #{players.last.title}</div>" }
       before { expect(match).to receive(:winner?).and_return(true) }
       it { is_expected.to eq title }
     end
@@ -78,7 +78,7 @@ RSpec.describe MatchDecorator do
     end
 
     context 'when winner' do
-      let(:title)   { "<div><i class=\"fa fa-trophy text-success\"></i>#{players.first.title} - #{players.last.title}</div>" }
+      let(:title) { "<div><i class=\"fa fa-trophy text-success\"></i>#{players.first.title} - #{players.last.title}</div>" }
       before { expect(match).to receive(:winner?).and_return(true) }
       it { is_expected.to eq title }
     end

@@ -2,7 +2,21 @@ pt-BR:
   activerecord:
     models:
       player: Jogador
+      match: Jogo
+      scout: Resultado
     attributes:
       player:
         name: Nome
         nick_name: Apelido
+      match:
+        started_at: Inicio
+        finished_at: Fim
+      scout:
+        run: Corridas
+        back: Pra trás
+        lost_ball: Bolinha perdida
+        bat_delivery: Entrega o taco
+        house: Casinha
+        burned: Queimada
+        victory: Vitória
+        concierge: Portaria

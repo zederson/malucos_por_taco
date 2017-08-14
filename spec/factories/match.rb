@@ -8,7 +8,7 @@ FactoryGirl.define do
     started_at Time.zone.now
     finished_at (Time.zone.now + 25.minutes)
 
-    after(:create) do |match_created, evaluator|
+    after(:create) do |match_created, _evaluator|
       first_team  = create(:team)
       second_team = create(:team)
 

@@ -4,6 +4,6 @@
   <div class="card-block">
     <h4 class="card-title"><%= @player.name %></h4>
     <p class="card-text"><%= @player.nick_name %></p>
-    <%= link_to 'Editar', edit_player_path(@player), class: 'card-link' %>
+    <%= link_to t('edit'), edit_player_path(@player), class: 'card-link' %>
   </div>
 </div>

@@ -13,7 +13,7 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
 
     if @player.save
-      flash[:success] = "#{@player.name} - Cadastrado com sucesso !!!"
+      flash[:success] = I18n.translate 'crud.create.success'
       redirect_to players_path
     else
       render :new
@@ -24,10 +24,10 @@ class PlayersController < ApplicationController
 
   def update
     if @player.update(player_params)
-      flash[:success] = 'Alteração realizada com sucesso !!'
+      flash[:success] = I18n.translate 'crud.edit.success'
       redirect_to players_path
     else
-      flash[:notice] = 'Não foi possivel atualizar'
+      flash[:notice] = I18n.translate 'crud.edit.fail'
       render :edit
     end
   end

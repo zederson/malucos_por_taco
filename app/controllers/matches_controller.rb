@@ -10,7 +10,7 @@ class MatchesController < ApplicationController
   def create
     create_match
     if @match && @match.valid?
-      flash[:success] = 'Cadastro realizado com sucesso'
+      flash[:success] = I18n.translate 'crud.create.success'
       redirect_to matches_path
     else
       render :new

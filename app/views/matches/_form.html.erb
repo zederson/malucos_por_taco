@@ -11,9 +11,9 @@
   </div>
 
   <div id="accordion" role="tablist" aria-multiselectable="true">
-    <%= render 'card_team', f: f, match: match, scout: match.scouts.first, team_label: 'a' %>
+    <%= render 'card_team', f: f, match: match, scout: match.scouts.first, team_label: t('team_code.first') %>
     <br>
-    <%= render 'card_team', f: f, match: match, scout: match.scouts.last,  team_label: 'b' %>
+    <%= render 'card_team', f: f, match: match, scout: match.scouts.last,  team_label: t('team_code.second') %>
   </div>
 
   <hr>

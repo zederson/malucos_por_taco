@@ -5,7 +5,7 @@ class Match
     def initialize(match_params, scout_params, team_params)
       @match          = Match.new(match_params)
       @scouts         = scout_params.map { |s| Scout.new(s) }
-      @team_params  = team_params
+      @team_params = team_params
     end
 
     def create

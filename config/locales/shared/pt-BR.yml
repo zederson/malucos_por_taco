@@ -1,0 +1,15 @@
+pt-BR:
+  bat: Taco
+  pitch: Arremesso
+  team: Time %{name}
+  edit: Editar
+  new: Novo
+  team_code:
+    first: a
+    second: b
+  crud:
+    create:
+      success: Cadastro realizado com sucesso !!!
+    edit:
+      success: Alteração realizada com sucesso !!!
+      fail: Não foi possível realizar a alteração

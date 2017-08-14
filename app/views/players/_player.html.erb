@@ -2,5 +2,5 @@
   <th scope="row"><%= link_to player.id, player_path(player) %></th>
   <td><%= player.name %></td>
   <td><%= player.nick_name%></td>
-  <td> <%= link_to 'Editar', edit_player_path(player) %> </td>
+  <td> <%= link_to t('edit'), edit_player_path(player) %> </td>
 </tr>

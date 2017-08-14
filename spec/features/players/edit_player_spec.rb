@@ -4,7 +4,7 @@ feature 'Editing player' do
   let(:user)   { create(:user) }
   let(:player) { create(:player) }
 
-  before { login_as(user, :scope => :user, :run_callbacks => false) }
+  before { login_as(user, scope: :user, run_callbacks: false) }
 
   scenario 'successfully' do
     player
@@ -18,9 +18,9 @@ feature 'Editing player' do
 
     click_on 'Atualizar Jogador'
 
-    expect(page).to have_content('Antonio Carlos')
-    expect(page).to have_content('Mussum')
-    expect(page).to have_content('Alteração realizada com sucesso !!')
+    expect(page).to have_content 'Antonio Carlos'
+    expect(page).to have_content 'Mussum'
+    expect(page).to have_content 'Alteração realizada com sucesso !!!'
   end
 
   scenario 'failed' do
@@ -35,6 +35,6 @@ feature 'Editing player' do
 
     click_on 'Atualizar Jogador'
 
-    expect(page).to have_content('Não foi possivel atualizar')
+    expect(page).to have_content('Não foi possível realizar a alteração')
   end
 end
