@@ -4,7 +4,7 @@ class Match < ApplicationRecord
   scope :recents, -> { order(:started_at) }
 
   def winner
-    scouts.sort_by(&:run).last
+    scouts.sort_by{ |s| s.run || 0 }.last
   end
 
   def winner?(scout)

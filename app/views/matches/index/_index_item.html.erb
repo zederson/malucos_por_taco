@@ -16,8 +16,8 @@
     <div class="card card-block">
       <div class="row">
         <div class="col-md-10 ">
-          <p> A partida durou <%= distance_of_time_in_words match.started_at, match.finished_at %>.</p>
-          <p> Começou <strong><%= l match.started_at, format: :time %>h</strong> e terminoul <strong><%= l match.finished_at, format: :time %>h</strong></p>
+          <p> <%= t 'match_lasted' %> <%= distance_of_time_in_words match.started_at, match.finished_at %>.</p>
+          <p> <%= raw t 'match_time.html', started_at: l(match.started_at, format: :time), finished_at: l(match.finished_at, format: :time) %></p>
         </div>
         <div class="col-md-2 text-center">
           <%= link_to edit_match_path(match), class: '' do %> <i class="fa fa-edit"></i> <%= t 'edit' %><% end %>

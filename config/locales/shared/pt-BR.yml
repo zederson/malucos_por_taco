@@ -1,4 +1,7 @@
 pt-BR:
+  match_lasted: A partida durou
+  match_time:
+    html: Começou <strong>%{started_at}h</strong> e terminou <strong>%{finished_at}h</strong>
   bat: Taco
   pitch: Arremesso
   team: Time %{name}

@@ -7,6 +7,5 @@ feature 'Access Home Page' do
     login_as(user, scope: :user, run_callbacks: false)
     visit root_path
     expect(page).to have_content('Dados de Jogos')
-    save_page
   end
 end
