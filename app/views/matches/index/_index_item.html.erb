@@ -1,0 +1,31 @@
+<div class="card ">
+  <a class="list-group-item-action flex-column" data-toggle="collapse" href="#more_content_<%= match.id %>" aria-expanded="false" aria-controls="more_content_<%= match.id %>">
+    <div class="card-block ">
+      <div class="row">
+        <div class="col-md-3 text-center"><strong><%= match.title_for_first_team %> </strong></div>
+        <div class="col-md-2 text-center">
+          <span class="badge badge-info badge-pill"><%= match.score_first_team %></span> x <span class="badge badge-info badge-pill"><%= match.score_second_team %></span>
+        </div>
+        <div class="col-md-3 text-center"><strong><%= match.title_for_second_team %></strong></div>
+        <div class="col-md-4 text-right"> <small><%= l match.started_at, format: :short %></small> </div>
+      </div>
+    </div>
+  </a>
+
+  <div class="collapse" id="more_content_<%= match.id%>">
+    <div class="card card-block">
+      <div class="row">
+        <div class="col-md-10 ">
+          <p> A partida durou <%= distance_of_time_in_words match.started_at, match.finished_at %>.</p>
+          <p> Começou <strong><%= l match.started_at, format: :time %>h</strong> e terminoul <strong><%= l match.finished_at, format: :time %>h</strong></p>
+        </div>
+        <div class="col-md-2 text-center">
+          <%= link_to edit_match_path(match), class: '' do %> <i class="fa fa-edit"></i> Editar <% end %>
+        </div>
+        <%= render partial: 'matches/index/score', locals: { title: match.title_for_first_team, scout: match.scout_first_team } %>
+        <%= render partial: 'matches/index/score', locals: { title: match.title_for_second_team, scout: match.scout_second_team } %>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

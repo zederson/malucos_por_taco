@@ -1,0 +1,15 @@
+<div class="col-md-4">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr> <th colspan="2" class="hidden-sm-up"><%= title %></th> </tr>
+    </thead>
+
+    <% items = %i(run back lost_ball bat_delivery house burned victory concierge) %>
+    <% items.each do |item| %>
+      <tr>
+        <td><%= Scout.human_attribute_name(item) %></td>
+        <td class="text-center"><%= scout.send(item) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
