@@ -22,5 +22,6 @@ module MalucosPorTaco
     config.autoload_paths << "#{Rails.root}/app/services"
     config.time_zone = 'Brasilia'
     config.i18n.default_locale = :'pt-BR'
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end

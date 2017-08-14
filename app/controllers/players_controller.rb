@@ -24,7 +24,7 @@ class PlayersController < ApplicationController
 
   def update
     if @player.update(player_params)
-      flash[:success] = 'Alteração realizada com sucess !!'
+      flash[:success] = 'Alteração realizada com sucesso !!'
       redirect_to players_path
     else
       flash[:notice] = 'Não foi possivel atualizar'
