@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require rails-ujs
 //= require tether.min
+//= require bootstrap.min
 //= require_tree .
