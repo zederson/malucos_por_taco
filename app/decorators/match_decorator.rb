@@ -14,7 +14,7 @@ class MatchDecorator < Draper::Decorator
 
   def title_for_second_team
     h.content_tag :div do
-      h.concat(h.content_tag(:i, '', class: 'fa fa-trophy text-success')) if winner?(scouts.last)
+      h.concat(h.content_tag(:i, ' ', class: 'fa fa-trophy text-success')) if winner?(scouts.last)
       h.concat(title_for_teams :last)
     end
   end

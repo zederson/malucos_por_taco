@@ -8,11 +8,8 @@ class MatchesController < ApplicationController
   end
 
   def create
-    scouts = ('a'..'b').map { |v| scout_params v }
-    teams  = ('a'..'b').map { |v| player_params v }
-    @match = Match::CreatorService.new(match_params, scouts, teams).create
-
-    if @match
+    create_match
+    if @match && @match.valid?
       flash[:success] = 'Cadastro realizado com sucesso'
       redirect_to matches_path
     else
@@ -21,6 +18,12 @@ class MatchesController < ApplicationController
   end
 
   private
+
+  def create_match
+    scouts = ('a'..'b').map { |v| scout_params v }
+    teams  = ('a'..'b').map { |v| player_params v }
+    @match = Match::CreatorService.new(match_params, scouts, teams).create
+  end
 
   def initialize_match
     @match = Builder::Match.build_match.decorate
