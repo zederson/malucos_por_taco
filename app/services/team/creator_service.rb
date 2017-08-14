@@ -19,7 +19,7 @@ class Team
     end
 
     def build_team(players)
-      team = Team.new.tap { |team| team.players = players }
+      team = Team.new.tap { |instance| instance.players = players }
       team.save
       team
     end

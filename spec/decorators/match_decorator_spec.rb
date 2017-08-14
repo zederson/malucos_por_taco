@@ -14,7 +14,8 @@ RSpec.describe MatchDecorator do
 
     context 'when score < 10' do
       before do
-        expect(match).to receive_message_chain('scouts.first.score').and_return(4)
+        expect(match)
+          .to receive_message_chain('scouts.first.score').and_return(4)
       end
       it { is_expected.to eq '04' }
     end
@@ -49,7 +50,9 @@ RSpec.describe MatchDecorator do
   describe '#title_for_first_team' do
     let(:match)   { create(:complete_match) }
     let(:players) { match.scouts.first.team.players }
-    let(:title)   { "<div>#{players.first.title} - #{players.last.title}</div>" }
+    let(:title) do
+      "<div>#{players.first.title} - #{players.last.title}</div>"
+    end
 
     subject { decorator.title_for_first_team }
 
@@ -59,7 +62,11 @@ RSpec.describe MatchDecorator do
     end
 
     context 'when winner' do
-      let(:title) { "<div><i class=\"fa fa-trophy text-success\"></i>#{players.first.title} - #{players.last.title}</div>" }
+      let(:title) do
+        names = "#{players.first.title} - #{players.last.title}"
+        "<div><i class=\"fa fa-trophy text-success\"></i>#{names}</div>"
+      end
+
       before { expect(match).to receive(:winner?).and_return(true) }
       it { is_expected.to eq title }
     end
@@ -68,7 +75,9 @@ RSpec.describe MatchDecorator do
   describe '#title_for_second_team' do
     let(:match)   { create(:complete_match) }
     let(:players) { match.scouts.last.team.players }
-    let(:title)   { "<div>#{players.first.title} - #{players.last.title}</div>" }
+    let(:title) do
+      "<div>#{players.first.title} - #{players.last.title}</div>"
+    end
 
     subject { decorator.title_for_second_team }
 
@@ -78,7 +87,10 @@ RSpec.describe MatchDecorator do
     end
 
     context 'when winner' do
-      let(:title) { "<div><i class=\"fa fa-trophy text-success\"></i>#{players.first.title} - #{players.last.title}</div>" }
+      let(:title) do
+        names = "#{players.first.title} - #{players.last.title}"
+        "<div><i class=\"fa fa-trophy text-success\"></i>#{names}</div>"
+      end
       before { expect(match).to receive(:winner?).and_return(true) }
       it { is_expected.to eq title }
     end

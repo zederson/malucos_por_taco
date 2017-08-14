@@ -30,7 +30,7 @@ class MatchesController < ApplicationController
   end
 
   def match_params
-    dates = (1..5).map {|i| ["started_at(#{i}i)", "finished_at(#{i}i)"] }
+    dates = (1..5).map { |i| ["started_at(#{i}i)", "finished_at(#{i}i)"] }
     params.require(:match).permit(dates.flatten)
   end
 
@@ -39,6 +39,7 @@ class MatchesController < ApplicationController
   end
 
   def scout_params(team)
-    params.require("scout_#{team}").permit(:run, :back, :lost_ball, :bat_delivery, :house, :burned, :victory, :concierge)
+    values = %i[run back lost_ball bat_delivery house burned victory concierge]
+    params.require("scout_#{team}").permit(values)
   end
 end

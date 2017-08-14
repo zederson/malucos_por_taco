@@ -1,12 +1,16 @@
+def time_finished
+  Time.zone.now + 25.minutes
+end
+
 FactoryGirl.define do
   factory :match do
     started_at Time.zone.now
-    finished_at (Time.zone.now + 25.minutes)
+    finished_at time_finished
   end
 
   factory :complete_match, class: Match do
     started_at Time.zone.now
-    finished_at (Time.zone.now + 25.minutes)
+    finished_at time_finished
 
     after(:create) do |match_created, _evaluator|
       first_team  = create(:team)
