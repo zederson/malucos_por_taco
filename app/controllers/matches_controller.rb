@@ -1,4 +1,5 @@
 class MatchesController < ApplicationController
+  before_action :set_match, only: [:edit]
   def index
     @matches = Match.recents.decorate
   end
@@ -18,6 +19,10 @@ class MatchesController < ApplicationController
   end
 
   private
+
+  def set_match
+    @match = Match.find(params[:id]).decorate
+  end
 
   def create_match
     scouts = ('a'..'b').map { |v| scout_params v }
