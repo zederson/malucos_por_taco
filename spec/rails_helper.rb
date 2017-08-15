@@ -7,7 +7,11 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'database_cleaner'
+require 'simplecov'
+
 include Warden::Test::Helpers
+
+SimpleCov.start 'rails'
 
 ActiveRecord::Migration.maintain_test_schema!
 

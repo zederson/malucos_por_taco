@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Builder::Match do
+RSpec.describe Match do
   let(:match) { Builder::Match.build_match }
 
   before do
@@ -9,13 +9,16 @@ RSpec.describe Builder::Match do
   end
 
   describe '#winner' do
-    subject { match }
-    it { expect(match.winner.run).to be 12 }
+    subject { match.winner }
+    it { expect(subject.run).to be 12 }
   end
 
   describe '#winner?' do
     let(:match) { create(:complete_match) }
-    it { expect(match.winner?(match.scouts.first)).to be_truthy }
-    it { expect(match.winner?(match.scouts.second)).to be_falsey }
+
+    subject { match }
+
+    it { expect(subject.winner?(match.scouts.first)).to be_truthy }
+    it { expect(subject.winner?(match.scouts.second)).to be_falsey }
   end
 end

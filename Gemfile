@@ -26,7 +26,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'simplecov', '~> 0.12.0'
+  gem 'simplecov', '~> 0.12.0', require: false
   gem 'simplecov-rcov', '~> 0.2.3'
 end
 
