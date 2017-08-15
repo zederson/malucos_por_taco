@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Create new Match' do
+feature 'Edit Match' do
   let(:user)    { create(:user) }
   let(:match) { create(:complete_match) }
 

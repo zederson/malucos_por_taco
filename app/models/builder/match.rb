@@ -2,10 +2,11 @@ module Builder
   class Match
     def self.build_match
       ::Match.new.tap do |m|
-        2.times { m.scouts.build }
         build_scount m
       end
     end
+
+    private
 
     def self.build_scount(match)
       2.times { match.scouts.build }
