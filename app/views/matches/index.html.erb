@@ -3,5 +3,5 @@
 <hr>
 
 <div >
-  <%= render partial: 'matches/index/index_item', collection: @matches, as: :match %>
+  <%= render partial: 'matches/index/index_item', collection: @matches, as: :match, locals: { opened: false } %>
 </div>

@@ -3,8 +3,8 @@ class Match
     attr_reader :match, :scouts, :team_a_params, :team_params
 
     def initialize(match_params, scout_params, team_params)
-      @match          = Match.new(match_params)
-      @scouts         = scout_params.map { |s| Scout.new(s) }
+      @match       = Match.new(match_params)
+      @scouts      = scout_params.map { |s| Scout.new(s) }
       @team_params = team_params
     end
 
@@ -28,6 +28,10 @@ class Match
 
     def team(params)
       Team::CreatorService.find_or_create_from_players(params)
+    end
+
+    def self.create(match, scouts, teams)
+      new(match, scouts, teams).create
     end
   end
 end

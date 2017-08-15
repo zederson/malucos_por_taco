@@ -1,5 +1,8 @@
 class MatchesController < ApplicationController
-  before_action :set_match, only: [:edit]
+  include Match::ParamsService
+
+  before_action :load_match, only: %i[edit update show]
+
   def index
     @matches = Match.recents.decorate
   end
@@ -18,33 +21,34 @@ class MatchesController < ApplicationController
     end
   end
 
+  def update
+    if update_match && @match.valid?
+      flash[:success] = I18n.translate 'crud.edit.success'
+      render :show
+    else
+      flash[:notice] = I18n.translate 'crud.edit.fail'
+      render :edit
+    end
+  end
+
   private
 
-  def set_match
+  def load_match
     @match = Match.find(params[:id]).decorate
   end
 
+  def update_match
+    service = Match::UpdaterService.new(@match)
+    service.update(match_params, parse_scouts, parse_teams)
+  end
+
   def create_match
-    scouts = ('a'..'b').map { |v| scout_params v }
-    teams  = ('a'..'b').map { |v| player_params v }
-    @match = Match::CreatorService.new(match_params, scouts, teams).create
+    scouts = parse_scouts
+    teams  = parse_teams
+    @match = Match::CreatorService.create(match_params, scouts, teams)
   end
 
   def initialize_match
     @match = Builder::Match.build_match.decorate
-  end
-
-  def match_params
-    dates = (1..5).map { |i| ["started_at(#{i}i)", "finished_at(#{i}i)"] }
-    params.require(:match).permit(dates.flatten)
-  end
-
-  def player_params(team)
-    params.require("player_#{team}").permit('1': [:id], '2': [:id])
-  end
-
-  def scout_params(team)
-    values = %i[run back lost_ball bat_delivery house burned victory concierge]
-    params.require("scout_#{team}").permit(values)
   end
 end

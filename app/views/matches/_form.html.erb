@@ -20,3 +20,9 @@
   <%= f.submit class: 'btn btn-primary' %>
   <br> <br>
 <% end %>
+
+<% content_for :javascript do %>
+  $(document).ready(function() {
+    $('.just-number').mask('000');
+  });
+<% end %>

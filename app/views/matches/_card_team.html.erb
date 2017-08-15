@@ -28,26 +28,27 @@
       <hr> <h3> <%= t 'bat' %></h3>
 
       <%= fields_for "scout_#{team_label}", scout do |scout_form| %>
+        <%= scout_form.hidden_field :id %>
 
         <div class="row">
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :run %>
-            <%= scout_form.number_field :run, class: 'form-control' %>
+            <%= scout_form.text_field :run, class: 'form-control just-number' %>
           </div>
 
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :back %>
-            <%= scout_form.number_field :back, class: 'form-control' %>
+            <%= scout_form.text_field :back, class: 'form-control just-number' %>
           </div>
 
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :lost_ball %>
-            <%= scout_form.number_field :lost_ball, class: 'form-control' %>
+            <%= scout_form.text_field :lost_ball, class: 'form-control just-number' %>
           </div>
 
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :bat_delivery %>
-            <%= scout_form.number_field :bat_delivery, class: 'form-control' %>
+            <%= scout_form.text_field :bat_delivery, class: 'form-control just-number' %>
           </div>
         </div>
 
@@ -55,22 +56,22 @@
         <div class="row">
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :house %>
-            <%= scout_form.number_field :house, class: 'form-control' %>
+            <%= scout_form.text_field :house, class: 'form-control just-number' %>
           </div>
 
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :burned %>
-            <%= scout_form.number_field :burned, class: 'form-control' %>
+            <%= scout_form.text_field :burned, class: 'form-control just-number' %>
           </div>
 
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :victory %>
-            <%= scout_form.number_field :victory, class: 'form-control' %>
+            <%= scout_form.text_field :victory, class: 'form-control just-number' %>
           </div>
 
           <div class="form-group col-sm-2 col-6">
             <%= scout_form.label :concierge %>
-            <%= scout_form.number_field :concierge, class: 'form-control' %>
+            <%= scout_form.text_field :concierge, class: 'form-control just-number' %>
           </div>
         </div>
       <% end %>
