@@ -17,8 +17,8 @@
     <%= render 'card_count_players' %>
   </div>
   <div class="card-columns">
-    <%= render 'teams_list', players: @matches.teams_loser, title: t('home.winners')  %>
-    <%= render 'teams_list', players: @matches.teams_winner, title: t('home.losers') %>
+    <%= render 'teams_list', players: @matches.teams_winner, title: t('home.winners')  %>
+    <%= render 'teams_list', players: @matches.teams_loser, title: t('home.losers') %>
   </div>
 </div>
 
