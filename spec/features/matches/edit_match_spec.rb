@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Edit Match' do
-  let(:user)    { create(:user) }
+  let(:user)  { create(:user) }
   let(:match) { create(:complete_match) }
 
   before { login_as(user, scope: :user, run_callbacks: false) }
@@ -10,11 +10,17 @@ feature 'Edit Match' do
     match
     visit edit_match_path(match)
 
-    find('#match_started_at_4i').find('option[12]').select_option
-    find('#match_started_at_5i').find('option[11]').select_option
+    select('1', from: 'match[started_at(3i)]')
+    select('Agosto', from: 'match[started_at(2i)]')
+    select('2017', from: 'match[started_at(1i)]')
+    select('11', from: 'match[started_at(4i)]')
+    select('10', from: 'match[started_at(5i)]')
 
-    find('#match_finished_at_4i').find('option[14]').select_option
-    find('#match_finished_at_5i').find('option[11]').select_option
+    select('1', from: 'match[finished_at(3i)]')
+    select('Agosto', from: 'match[finished_at(2i)]')
+    select('2017', from: 'match[finished_at(1i)]')
+    select('13', from: 'match[finished_at(4i)]')
+    select('10', from: 'match[finished_at(5i)]')
 
     find('#player_a_1_id').find('option[2]').select_option
     find('#player_a_2_id').find('option[3]').select_option

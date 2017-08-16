@@ -36,6 +36,7 @@ class MatchDecorator < Draper::Decorator
       if winner?(scouts.send(trigger))
         clazz = 'fa fa-trophy text-success'
         h.concat(h.content_tag(:i, '', class: clazz))
+        h.concat(' ')
       end
       h.concat(title_for_teams(trigger))
     end

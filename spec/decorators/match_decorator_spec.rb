@@ -64,7 +64,7 @@ RSpec.describe MatchDecorator do
     context 'when winner' do
       let(:title) do
         names = "#{players.first.title} - #{players.last.title}"
-        "<div><i class=\"fa fa-trophy text-success\"></i>#{names}</div>"
+        "<div><i class=\"fa fa-trophy text-success\"></i> #{names}</div>"
       end
 
       before { expect(match).to receive(:winner?).and_return(true) }
@@ -89,7 +89,7 @@ RSpec.describe MatchDecorator do
     context 'when winner' do
       let(:title) do
         names = "#{players.first.title} - #{players.last.title}"
-        "<div><i class=\"fa fa-trophy text-success\"></i>#{names}</div>"
+        "<div><i class=\"fa fa-trophy text-success\"></i> #{names}</div>"
       end
       before { expect(match).to receive(:winner?).and_return(true) }
       it { is_expected.to eq title }

@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
   before_action :load_match, only: %i[edit update show]
 
   def index
-    @matches = Match.recents.decorate
+    @matches = Match::SearchService.by_started(search_param).decorate
   end
 
   def new
@@ -46,6 +46,10 @@ class MatchesController < ApplicationController
     scouts = parse_scouts
     teams  = parse_teams
     @match = Match::CreatorService.create(match_params, scouts, teams)
+  end
+
+  def search_param
+    params.dig(:q, :started_at)
   end
 
   def initialize_match

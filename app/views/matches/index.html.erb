@@ -1,7 +1,13 @@
 <h1 class="text-info">Jogos</h1>
-<%= link_to t('new'), new_match_path, class: 'btn btn-outline-info' %>
-<hr>
+<div class="row">
+  <div class="col"> <%= link_to t('new'), new_match_path, class: 'btn btn-outline-info' %> </div>
 
-<div >
-  <%= render partial: 'matches/index/index_item', collection: @matches, as: :match, locals: { opened: false } %>
+  <div class="col-md-3  ml-auto">
+    <%= render 'search_for_started_at' %>
+  </div>
 </div>
+<br>
+<p class="text-right"><small><%= t 'matches.quantity_matches', count: @matches.size %></small</p>
+
+<hr>
+<%= render partial: 'matches/index/index_item', collection: @matches, as: :match, locals: { opened: false } %>

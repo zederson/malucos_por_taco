@@ -16,3 +16,10 @@ pt-BR:
     edit:
       success: Alteração realizada com sucesso !!!
       fail: Não foi possível realizar a alteração
+  matches:
+    index:
+      search: 'Data do jogo'
+    quantity_matches:
+      zero: 'Não tem jogos'
+      one: 'Um jogo'
+      other: '%{count} jogos'
