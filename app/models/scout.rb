@@ -5,4 +5,8 @@ class Scout < ApplicationRecord
   def score
     (run || 0) * 2
   end
+
+  def winner?
+    match.winner?(self)
+  end
 end

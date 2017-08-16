@@ -2,7 +2,7 @@ class Match
   class SearchService
     class << self
       def by_started(start)
-        query = Match.recents
+        query = Match.recents.includes(scouts: [team: [:players]])
         query = add_condition(query, start) if start.present?
         query.all
       end

@@ -17,9 +17,17 @@ pt-BR:
       success: Alteração realizada com sucesso !!!
       fail: Não foi possível realizar a alteração
   matches:
+    name: 'Jogos'
     index:
       search: 'Data do jogo'
     quantity_matches:
       zero: 'Não tem jogos'
       one: 'Um jogo'
       other: '%{count} jogos'
+  home:
+    winners: 'Vencedores'
+    losers: 'Perdedores'
+    players:
+      title: 'Jogadores'
+    teams:
+      title: 'Times'

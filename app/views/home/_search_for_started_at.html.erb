@@ -1,0 +1,10 @@
+<%= form_for root_path, method: :get do |f| %>
+  <div class="input-group">
+    <%= select(:q, :started_at, options_for_select(match_dates_options, selected: params.dig(:q, :started_at)), { include_blank: t('matches.index.search') }, class: 'form-control custom-select') %>
+    <span class="input-group-btn">
+      <%= f.button class: 'btn btn-secondary', id: 'search_button' do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+    </span>
+  </div>
+<% end %>

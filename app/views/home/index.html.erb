@@ -1,7 +1,31 @@
-<h1>Malucos Por Taco</h1>
+<br>
+<div class="row">
+  <div class="col"> <h2>Malucos Por Taco</h2></div>
 
-<section class="row text-center placeholders">
-  <div class="col-6 col-sm-3 placeholder">
-    <h2>Dados de Jogos</h2>
+  <div class="col-md-3  ml-auto">
+    <%= render 'search_for_started_at' %>
   </div>
-</section>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="card-columns">
+    <%= render 'players_list', players: @matches.players_winners, title: t('home.winners') %>
+    <%= render 'players_list', players: @matches.players_losers, title: t('home.losers') %>
+    <%= render 'card_count_matches' %>
+    <%= render 'card_count_players' %>
+  </div>
+  <div class="card-columns">
+    <%= render 'teams_list', players: @matches.teams_loser, title: t('home.winners')  %>
+    <%= render 'teams_list', players: @matches.teams_winner, title: t('home.losers') %>
+  </div>
+</div>
+
+<% content_for :javascript do %>
+  $(document).ready(function() {
+    $('.counter').counterUp({
+      delay: 10, time: 1000
+    });
+  });
+<% end %>

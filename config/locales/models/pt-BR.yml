@@ -4,6 +4,7 @@ pt-BR:
       player: Jogador
       match: Jogo
       scout: Resultado
+      team: Time
     attributes:
       player:
         name: Nome

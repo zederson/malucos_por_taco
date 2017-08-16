@@ -43,8 +43,6 @@ class MatchDecorator < Draper::Decorator
   end
 
   def title_for_teams(trigger)
-    players = scouts.send(trigger).team.players
-    titles  = players.map(&:title)
-    titles.join ' - '
+    scouts.send(trigger).team.title
   end
 end
