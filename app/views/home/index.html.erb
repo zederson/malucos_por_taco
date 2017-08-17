@@ -8,25 +8,27 @@
 </div>
 
 <br>
+<%= render 'boxes' %>
+<hr>
 
-<div class="container">
-  <div class="card-columns row">
-    <div class="col-md-3"> <%= render 'card_count_matches' %> </div>
-    <div class="col-md-3"> <%= render 'card_count_players' %> </div>
-    <div class="col-md-3"> <%= render 'card_team_winner' %>   </div>
-    <div class="col-md-3"> <%= render 'card_player_winner' %> </div>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" data-toggle="tab" href="#graficos" role="tab">Gráficos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#lista" role="tab">Lista</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="graficos" role="tabpanel">
+    <%= render 'charts' %>
   </div>
-
-  <div class="card-columns">
-    <%= render 'players_list', players: @matches.players_winners, title: t('home.winners') %>
-    <%= render 'players_list', players: @matches.players_losers, title: t('home.losers') %>
-  </div>
-
-  <div class="card-columns">
-    <%= render 'teams_list', teams: @matches.teams_winner, title: t('home.winners')  %>
-    <%= render 'teams_list', teams: @matches.teams_loser, title: t('home.losers') %>
+  <div class="tab-pane" id="lista" role="tabpanel">
+    <%= render 'list' %>
   </div>
 </div>
+
 
 <% content_for :javascript do %>
   $(document).ready(function() {

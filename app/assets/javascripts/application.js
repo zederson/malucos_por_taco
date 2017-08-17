@@ -18,4 +18,5 @@
 //= require jquery.mask.min
 //= require jquery.waypoints.min
 //= require jquery.counterup.min
+//= require highcharts
 //= require_tree .

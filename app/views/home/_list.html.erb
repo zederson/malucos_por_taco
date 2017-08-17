@@ -1,0 +1,12 @@
+<br>
+<div class="container">
+  <div class="card-columns">
+    <%= render 'home/list/players_list', players: @matches.players_winners, title: t('home.winners') %>
+    <%= render 'home/list/players_list', players: @matches.players_losers, title: t('home.losers') %>
+  </div>
+
+  <div class="card-columns">
+    <%= render 'home/list/teams_list', teams: @matches.teams_winner, title: t('home.winners')  %>
+    <%= render 'home/list/teams_list', teams: @matches.teams_loser, title: t('home.losers') %>
+  </div>
+</div>
