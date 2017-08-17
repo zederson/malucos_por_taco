@@ -10,15 +10,21 @@
 <br>
 
 <div class="container">
+  <div class="card-columns row">
+    <div class="col-md-3"> <%= render 'card_count_matches' %> </div>
+    <div class="col-md-3"> <%= render 'card_count_players' %> </div>
+    <div class="col-md-3"> <%= render 'card_team_winner' %>   </div>
+    <div class="col-md-3"> <%= render 'card_player_winner' %> </div>
+  </div>
+
   <div class="card-columns">
     <%= render 'players_list', players: @matches.players_winners, title: t('home.winners') %>
     <%= render 'players_list', players: @matches.players_losers, title: t('home.losers') %>
-    <%= render 'card_count_matches' %>
-    <%= render 'card_count_players' %>
   </div>
+
   <div class="card-columns">
-    <%= render 'teams_list', players: @matches.teams_winner, title: t('home.winners')  %>
-    <%= render 'teams_list', players: @matches.teams_loser, title: t('home.losers') %>
+    <%= render 'teams_list', teams: @matches.teams_winner, title: t('home.winners')  %>
+    <%= render 'teams_list', teams: @matches.teams_loser, title: t('home.losers') %>
   </div>
 </div>
 

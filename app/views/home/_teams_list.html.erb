@@ -1,8 +1,10 @@
 <div class="card">
   <div class="card-block">
-    <p class="card-title"> <%= "#{t 'home.teams.title'} #{title}" %></p>
+    <p class="card-title">
+      <a class="" data-toggle="collapse" href="#collapse<%= teams.object_id %>" aria-expanded="false" aria-controls="collapse<%= teams.object_id %>"> <%= "#{t 'home.teams.title'} #{title}" %> </a>
+    </p>
 
-    <div class="card-text">
+    <div class="card-text show" id="collapse<%= teams.object_id %>">
       <table class="table table-bordered table-striped table-sm">
         <thead class="thead-inverse">
           <tr>
@@ -13,7 +15,7 @@
         </thead>
 
         <tbody>
-          <% players.each_with_index do |winner, index| %>
+          <% teams.each_with_index do |winner, index| %>
             <tr>
               <td class="text-center"><%= index + 1 %></td>
               <td class="text-center"><%= winner.first %></td>

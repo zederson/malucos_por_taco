@@ -25,6 +25,7 @@ pt-BR:
       one: 'Um jogo'
       other: '%{count} jogos'
   home:
+    champions: 'Campeão'
     winners: 'Vencedores'
     losers: 'Perdedores'
     players:

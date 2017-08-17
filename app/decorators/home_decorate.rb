@@ -25,18 +25,12 @@ class HomeDecorate
 
   def teams_winner
     scouts = matches.map(&:winner)
-    teams  = scouts.map(&:team)
-    grouped = teams.group_by(&:id)
-    ordered = grouped.map { |_k, v| [v.first.title, v.size] }
-    sort_players ordered
+    extract_teams scouts
   end
 
   def teams_loser
     scouts = matches.map(&:loser)
-    teams  = scouts.map(&:team)
-    grouped = teams.group_by(&:id)
-    ordered = grouped.map { |_k, v| [v.first.title, v.size] }
-    sort_players ordered
+    extract_teams scouts
   end
 
   def self.decorate(matches)
@@ -47,7 +41,16 @@ class HomeDecorate
 
   def extract_players(scouts)
     players = scouts.map { |s| s.team.players }.flatten
-    grouped = players.group_by(&:id)
+    group_and_order players
+  end
+
+  def extract_teams(scouts)
+    teams = scouts.map(&:team)
+    group_and_order teams
+  end
+
+  def group_and_order(list)
+    grouped = list.group_by(&:id)
     ordered = grouped.map { |_k, v| [v.first.title, v.size] }
     sort_players ordered
   end
