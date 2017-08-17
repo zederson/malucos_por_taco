@@ -10,5 +10,10 @@ module Charts
       s = QuantityPlayersService.new(matches)
       s.run
     end
+
+    def pie_quantity_team
+      s = QuantityTeamsService.new(matches)
+      s.run
+    end
   end
 end

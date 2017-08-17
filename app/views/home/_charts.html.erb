@@ -1,6 +1,11 @@
 <br>
 <div class="container">
   <div class="card-columns row">
-    <%= render partial: 'home/charts/pie_charts', locals: { id: 'pie_quantity_matches', source: @matches.charts. pie_quantity_player, title: t('charts.quantity_players'), tooltip: t('matches.name') } %>
+    <div class="col-md-6">
+      <%= render partial: 'home/charts/pie_charts', locals: { id: 'pie_quantity_matches', source: @matches.charts.pie_quantity_player, title: t('charts.quantity_players'), tooltip: t('matches.name'), legend: true } %>
+    </div>
+    <div class="col-md-6">
+      <%= render partial: 'home/charts/pie_charts', locals: { id: 'pie_quantity_teams', source: @matches.charts.pie_quantity_team, title: t('charts.quantity_players'), tooltip: t('matches.name'), legend: false } %>
+    </div>
   </div>
 </div>

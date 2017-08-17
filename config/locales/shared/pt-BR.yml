@@ -34,3 +34,4 @@ pt-BR:
       title: 'Times'
   charts:
     quantity_players: 'Quantidade de Jogos'
+    quantity_temas: 'Quantidade por Time'

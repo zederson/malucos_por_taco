@@ -3,6 +3,7 @@
 <% content_for :javascript do %>
   $(document).ready(function() {
     data = <%= raw source.to_json  %>;
-    charts.pie('<%= id %>', '<%= title %>', '<%= tooltip %>', data);
+    options = charts.pieOptions(<%= legend %>);
+    charts.pie('<%= id %>', '<%= title %>', '<%= tooltip %>', data, options);
   });
 <% end %>
