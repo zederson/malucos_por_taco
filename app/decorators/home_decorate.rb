@@ -18,7 +18,7 @@ class HomeDecorate
   end
 
   def count_players
-    scouts  = matches.map(&:scouts).flatten
+    scouts  = matches.flat_map(&:scouts)
     players = extract_players scouts
     players.size
   end
@@ -33,6 +33,10 @@ class HomeDecorate
     extract_teams scouts
   end
 
+  def charts
+    @charts ||= Charts::Service.new(matches)
+  end
+
   def self.decorate(matches)
     new(matches)
   end
@@ -40,7 +44,7 @@ class HomeDecorate
   private
 
   def extract_players(scouts)
-    players = scouts.map { |s| s.team.players }.flatten
+    players = scouts.flat_map { |s| s.team.players }
     group_and_order players
   end
 

@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require highcharts
+//= require exporting
 //= require rails-ujs
 //= require tether.min
 //= require bootstrap.min
 //= require jquery.mask.min
 //= require jquery.waypoints.min
 //= require jquery.counterup.min
-//= require highcharts
 //= require_tree .

@@ -1,4 +1,6 @@
 <br>
 <div class="container">
-  asdsadas
+  <div class="card-columns row">
+    <%= render partial: 'home/charts/pie_charts', locals: { id: 'pie_quantity_matches', source: @matches.charts. pie_quantity_player, title: t('charts.quantity_players'), tooltip: t('matches.name') } %>
+  </div>
 </div>

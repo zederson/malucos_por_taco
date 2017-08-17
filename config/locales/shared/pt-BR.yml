@@ -32,3 +32,5 @@ pt-BR:
       title: 'Jogadores'
     teams:
       title: 'Times'
+  charts:
+    quantity_players: 'Quantidade de Jogos'
