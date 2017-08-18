@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :players
   resources :matches
+  resources :teams, only: [:index]
 end

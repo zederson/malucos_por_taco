@@ -1,10 +1,16 @@
 <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
+      <%= link_to 'Home', root_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
       <%= link_to 'Jogadores', players_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
       <%= link_to 'Jogos', matches_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Times', teams_path, class: 'nav-link' %>
     </li>
   </ul>
 

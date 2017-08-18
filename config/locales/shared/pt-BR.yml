@@ -35,3 +35,6 @@ pt-BR:
   charts:
     quantity_players: 'Quantidade de Jogos'
     quantity_temas: 'Quantidade por Time'
+    general: 'Dados Gerais'
+  scout:
+    score: 'Pontos'

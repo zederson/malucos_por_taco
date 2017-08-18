@@ -51,9 +51,22 @@ var charts;
   }
   charts.pieOptions = pieOptions;
 
-  function column(id, name, data) {
+  function stakedBar(id, name, data) {
+    Highcharts.chart(id, {
+      chart: { type: 'bar' },
+      subtitle: { text: subtitle() },
+      title: { text: name },
+      xAxis: { categories: data['categories'] },
+      yAxis: {
+        min: 0,
+        title: { text: '' }
+      },
+      legend: { reversed: true },
+      plotOptions: { series: { stacking: 'normal' } },
+      series: data['items']
+    });
   }
-  charts.column = column
+  charts.stakedBar = stakedBar
 
 })(charts || (charts = {}));
 

@@ -1,0 +1,26 @@
+<div class="card card-outline-primary mb-3">
+  <div class="card-block">
+    <h4 class="card-title">
+      <a class="" data-toggle="collapse" href="#collapse<%= team.id %>" aria-expanded="false" aria-controls="collapse<%= team.id %>"> <%= team.title%> </a>
+    </h4>
+    <div class="col-md-4 collapse" id="collapse<%= team.id %>">
+      <table class="table table-bordered table-striped table-sm">
+        <tbody>
+          <tr>
+            <td><%= t 'matches.name' %></td> <td class="text-center"><%= team.matches_count %></td>
+          </tr>
+          <tr>
+            <td><%= t 'scout.score' %></td> <td class="text-center"><%= team.total_score %></td>
+          </tr>
+          <% team.keys.each do |key| %>
+            <tr>
+              <td><%= Scout.human_attribute_name(key) %></td> <td class="text-center"><%= team.total_for(key)%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <p class="card-text"><small class="text-muted"><%= "#{t 'matches.name'} #{team.matches_count}" %></small></p>
+
+  </div>
+</div>

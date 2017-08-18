@@ -7,13 +7,15 @@ module Charts
     end
 
     def pie_quantity_player
-      s = QuantityPlayersService.new(matches)
-      s.run
+      QuantityPlayersService.new(matches).run
     end
 
     def pie_quantity_team
-      s = QuantityTeamsService.new(matches)
-      s.run
+      QuantityTeamsService.new(matches).run
+    end
+
+    def staked_bar
+      QuantityScoutService.new(matches).run
     end
   end
 end

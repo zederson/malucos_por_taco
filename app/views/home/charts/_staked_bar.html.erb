@@ -1,0 +1,8 @@
+<div id="<%= id %>"> </div>
+
+<% content_for :javascript do %>
+  $(document).ready(function() {
+    data = <%= raw source.to_json  %>;
+    charts.stakedBar('<%= id %>', '<%= title %>', data);
+  });
+<% end %>
