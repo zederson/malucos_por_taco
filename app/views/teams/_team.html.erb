@@ -1,13 +1,19 @@
 <div class="card card-outline-primary mb-3">
   <div class="card-block">
     <h4 class="card-title">
-      <a class="" data-toggle="collapse" href="#collapse<%= team.id %>" aria-expanded="false" aria-controls="collapse<%= team.id %>"> <%= team.title%> </a>
+      <a class="" data-toggle="collapse" href="#collapse<%= team.id %>" aria-expanded="false" aria-controls="collapse<%= team.id %>"> <i class="fa fa-trophy" aria-hidden="true"></i> <%= team.title%> </a>
     </h4>
     <div class="col-md-4 collapse" id="collapse<%= team.id %>">
       <table class="table table-bordered table-striped table-sm">
         <tbody>
           <tr>
             <td><%= t 'matches.name' %></td> <td class="text-center"><%= team.matches_count %></td>
+          </tr>
+          <tr>
+            <td><%= t '.total_winner' %></td> <td class="text-center"><%= team.total_winner %></td>
+          </tr>
+          <tr>
+            <td><%= t '.total_loser' %></td> <td class="text-center"><%= team.total_loser %></td>
           </tr>
           <tr>
             <td><%= t 'scout.score' %></td> <td class="text-center"><%= team.total_score %></td>

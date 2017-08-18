@@ -38,3 +38,7 @@ pt-BR:
     general: 'Dados Gerais'
   scout:
     score: 'Pontos'
+    teams:
+      team:
+        total_winner: 'Venceu'
+        total_loser: 'Perdeu'

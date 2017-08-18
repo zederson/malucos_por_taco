@@ -9,6 +9,14 @@ class TeamDecorator < Draper::Decorator
     scouts.map(&:score).reduce(&:+)
   end
 
+  def total_winner
+    scouts.select(&:winner?).size
+  end
+
+  def total_loser
+    scouts.select(&:loser?).size
+  end
+
   def keys
     %i[back lost_ball bat_delivery house burned victory concierge]
   end

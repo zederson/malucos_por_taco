@@ -9,4 +9,8 @@ class Scout < ApplicationRecord
   def winner?
     match.winner?(self)
   end
+
+  def loser?
+    !winner?
+  end
 end
