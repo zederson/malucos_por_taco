@@ -1,4 +1,4 @@
-FROM ruby:2.2.5
+FROM ruby:2.4.1
 MAINTAINER Ederson de Lima <edersondelima@gmail.com>
 
 ENV APP_DIR=/var/www/malucos_por_taco
