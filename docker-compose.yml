@@ -16,3 +16,4 @@ services:
       - .:/var/www/malucos_por_taco
     environment:
       RAILS_ENV: 'production'
+      SECRET_KEY_BASE: '565010bfb6f0a999aad3936690c1299753628d2d16dc148d5dd3e18a8308f5fa83e203f1b525cb6f49e98ed3cd3e7c5607d71736178b79065fa84258aa2dff51'
