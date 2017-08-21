@@ -1,0 +1,4 @@
+bundle install --production --without "development test" --clean
+bundle exec rake --trace assets:precompile
+bundle exec rake db:create
+bundle exec rake db:migrate
