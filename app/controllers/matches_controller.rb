@@ -1,4 +1,4 @@
-class MatchesController < ApplicationController
+class MatchesController < AuthenticateController
   include Match::ParamsService
 
   before_action :load_match, only: %i[edit update show]

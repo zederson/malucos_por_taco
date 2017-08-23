@@ -15,5 +15,7 @@
 
   <% if user_signed_in? %>
     <%= link_to('Sair', destroy_user_session_path, method: :delete, class: 'nav-link btn btn-outline-success mr-sm-2 text-center') %>
+  <% else %>
+    <a href="http://www.malucosportaco.com.br" class="nav-link btn btn-outline-info mr-sm-2 text-center">Site</a>
   <% end %>
 </div>

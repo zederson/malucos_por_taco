@@ -1,4 +1,4 @@
-class PlayersController < ApplicationController
+class PlayersController < AuthenticateController
   before_action :load_player, only: %i[show edit update]
 
   def index

@@ -1,7 +1,9 @@
 <h1 class="text-info">Jogadores</h1>
 
-<%= link_to t('edit'), edit_player_path(@player), class: 'card-link' %>
-<hr>
+<% if user_signed_in? %>
+  <%= link_to t('edit'), edit_player_path(@player), class: 'card-link' %>
+  <hr>
+<% end %>
 
 <div class="row container justify-content-md-center">
   <div class="col-md-6 col-11 profile-card">

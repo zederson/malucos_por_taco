@@ -13,6 +13,7 @@ pt-BR:
   team: Time %{name}
   edit: Editar
   new: Novo
+  show: Detalhe
   team_code:
     first: a
     second: b

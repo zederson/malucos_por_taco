@@ -1,12 +1,14 @@
 <h1 class="text-info">Jogadores</h1>
 
-<%= link_to t('new'), new_player_path, class: 'btn btn-outline-info' %>
-<hr>
+<% if user_signed_in? %>
+  <%= link_to t('new'), new_player_path, class: 'btn btn-outline-info' %>
+  <hr>
+<% end %>
+
 
 <table class="table table-striped">
   <thead class="thead-inverse">
     <tr>
-      <th>#</th>
       <th><%= Player.human_attribute_name :name %></th>
       <th><%= Player.human_attribute_name :nick_name %></th>
       <th></th>

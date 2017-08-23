@@ -20,7 +20,9 @@
           <p> <%= raw t 'match_time.html', started_at: l(match.started_at, format: :time), finished_at: l(match.finished_at, format: :time) %></p>
         </div>
         <div class="col-md-2 text-center">
-          <%= link_to edit_match_path(match), class: '' do %> <i class="fa fa-edit"></i> <%= t 'edit' %><% end %>
+          <% if user_signed_in? %>
+            <%= link_to edit_match_path(match), class: '' do %> <i class="fa fa-edit"></i> <%= t 'edit' %><% end %>
+          <% end %>
         </div>
         <%= render partial: 'matches/index/score', locals: { title: match.title_for_first_team, scout: match.scout_first_team } %>
         <%= render partial: 'matches/index/score', locals: { title: match.title_for_second_team, scout: match.scout_second_team } %>

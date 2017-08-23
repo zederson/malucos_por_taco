@@ -1,6 +1,9 @@
 <h1 class="text-info">Jogos</h1>
 <div class="row">
-  <div class="col"> <%= link_to t('new'), new_match_path, class: 'btn btn-outline-info' %> </div>
+
+  <% if user_signed_in? %>
+    <div class="col"> <%= link_to t('new'), new_match_path, class: 'btn btn-outline-info' %> </div>
+  <% end %>
 
   <div class="col-md-3  ml-auto">
     <%= render 'search_for_started_at' %>
