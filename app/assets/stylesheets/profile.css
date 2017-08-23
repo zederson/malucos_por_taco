@@ -1,0 +1,142 @@
+/* https://codepen.io/anism/pen/znoJc  */
+
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+
+.profile-card {
+  /* width: 500px; */
+  height: 400px;
+  font: 12px;
+}
+.profile-card .profile-cover {
+  background: url('/images/profile/bg.jpg') no-repeat center;
+  background-size: 100% 100%;
+  position: relative;
+  height: 260px;
+
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+
+  transition: all .5s;
+  -moz-transition: all .5s; /* Firefox 4 */
+  -webkit-transition: all .5s; /* Safari and Chrome */
+  -o-transition: all .5s; /* Opera */
+}
+.profile-card .profile-cover:hover {
+  filter: none;
+  filter: none;
+  -webkit-filter: none;
+
+}
+.profile-card .profile-cover .profile-avatar {
+  background: #0000;
+  border: 1px solid #eeeeee;
+  border: 5px solid #ffffff;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  margin: 25px auto 0;
+  overflow: hidden;
+  left: 0;
+  right: 0;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  transition: all .5s;
+  -moz-transition: all .5s; /* Firefox 4 */
+  -webkit-transition: all .5s; /* Safari and Chrome */
+  -o-transition: all .5s; /* Opera */
+}
+.profile-card .profile-cover .profile-avatar:hover {
+  margin-top: 23px;
+}
+.profile-card .profile-cover .profile-avatar .btns-container {
+  position: relative;
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: none;
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a {
+  display: inline-block;
+  background: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a img {
+  display: block;
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a.zoom-avatar {
+  background: rgba(103, 186, 144, 0.7);
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a.zoom-avatar:hover {
+  background: rgba(103, 186, 144, 1);
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a.read-more {
+  background: rgba(231, 76, 60, 0.7);
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a.read-more:hover {
+  background: rgba(231, 76, 60, 1);
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a.view-map {
+  background: rgba(157, 177, 218, 0.7);
+}
+.profile-card .profile-cover .profile-avatar .btns-container .profile-links a.view-map:hover {
+  background: rgba(157, 177, 218, 1);
+}
+.profile-card .profile-cover .profile-details {
+  background: rgba(0,0,0,0.4);
+  border-top: 1px solid rgba(0,0,0,0.5);
+  color: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px 0 7px;
+}
+.profile-card .profile-cover .profile-details h6 {
+  font-weight: normal;
+}
+
+.profile-card .profile-content {
+  background: #ffffff; /* Old browsers */
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-8 */
+  border: 1px solid #cccccc;
+  border-top: none;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.profile-avatar img {
+  width: 140px;
+  height: 135px;
+}
+
+.profile-details h1 { font-size: 18px; }
+.profile-details h6 { font-size: 13px; }

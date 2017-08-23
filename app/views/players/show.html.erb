@@ -1,9 +1,29 @@
 <h1 class="text-info">Jogadores</h1>
 
-<div class="card">
-  <div class="card-block">
-    <h4 class="card-title"><%= @player.name %></h4>
-    <p class="card-text"><%= @player.nick_name %></p>
-    <%= link_to t('edit'), edit_player_path(@player), class: 'card-link' %>
+<%= link_to t('edit'), edit_player_path(@player), class: 'card-link' %>
+<hr>
+
+<div class="row container justify-content-md-center">
+  <div class="col-md-6 col-11 profile-card">
+    <div class="profile-cover">
+      <div class="profile-avatar">
+        <a href="#"><%= image_profile @player.nick_name %></a>
+      </div>
+      <div class="profile-details">
+        <h1><%= @player.nick_name %></h1>
+        <h6><%= @player.name %></h6>
+      </div>
+    </div>
+
+    <div class="profile-content">
+      <br>
+      <div class="card-columns row">
+        <%= render partial: 'card_total_matches', locals: { total: @player.total_matches, title: t('matches.name') } %>
+        <%= render partial: 'card_total_matches', locals: { total: @player.total_teams, title: t('home.teams.title') } %>
+        <%= render partial: 'card_total_matches', locals: { total: @player.total_winner, title: t('scout.teams.team.total_winner') } %>
+        <%= render partial: 'card_total_matches', locals: { total: @player.total_loser, title: t('scout.teams.team.total_loser') } %>
+      </div>
+      <div class="clear"></div>
+    </div>
   </div>
 </div>

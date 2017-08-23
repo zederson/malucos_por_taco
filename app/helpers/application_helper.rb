@@ -22,4 +22,10 @@ module ApplicationHelper
       end
     end
   end
+
+  def image_profile(nick_name)
+    image_name = I18n.transliterate nick_name.downcase
+    path = "/images/profile/#{image_name}.jpg"
+    image_tag path
+  end
 end

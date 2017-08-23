@@ -39,6 +39,6 @@ class PlayersController < ApplicationController
   end
 
   def load_player
-    @player = Player.find(params[:id])
+    @player = Player.find(params[:id]).decorate
   end
 end
