@@ -1,26 +1,7 @@
 <nav class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
   <br>
   <ul class="nav nav-pills flex-column">
-    <li class="nav-item">
-      <%= link_to root_path, class: 'nav-link' do %>
-        <i class="fa fa-bar-chart" ></i> Dashboard
-      <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to players_path, class: 'nav-link' do %>
-        <i class="fa fa-gavel" aria-hidden="true"></i> Jogadores
-      <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to matches_path, class: 'nav-link' do %>
-        <i class="fa fa-futbol-o" aria-hidden="true"></i> Jogos
-      <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to teams_path, class: 'nav-link' do %>
-        <i class="fa fa-renren" aria-hidden="true"></i> Times
-      <% end %>
-    </li>
+    <%= render 'layouts/nav_links' %>
   </ul>
 
   <%# <ul class="nav nav-pills flex-column"> %>

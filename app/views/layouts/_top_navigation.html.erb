@@ -1,16 +1,19 @@
-<i class="fa fa-rebel fa-2x text-info" aria-hidden="true"></i> &nbsp; &nbsp;
-<%= link_to ' Malucos por Taco', root_path, class: 'navbar-brand'%>
+<button class="navbar-toggler navbar-toggler-right hidden-lg-up collapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
 
-<div class="collapse navbar-collapse" id="navbarsExampleDefault">
-  <ul class="navbar-nav mr-auto">
-    <%# <li class="nav-item"> %>
-    <%#   <a class="nav-link" href="#">Settings</a> %>
-    <%# </li> %>
+<%= link_to  root_path, class: 'navbar-brand' do %>
+  <i class="fa fa-rebel fa-1x text-info" aria-hidden="true"></i> &nbsp;
+  <%= t 'title' %>
+<% end %>
+
+<div class="navbar-collapse collapse" id="navbarsExampleDefault" aria-expanded="false" style="">
+  <ul class="navbar-nav mr-auto hidden-sm-up">
+    <%= render 'layouts/nav_links' %>
   </ul>
+  <ul class="navbar-nav mr-auto"> </ul>
 
   <% if user_signed_in? %>
-    <li>
-      <%= link_to('Sair', destroy_user_session_path, method: :delete, class: 'btn btn-outline-success my-2 my-sm-0') %>
-    </li>
+    <%= link_to('Sair', destroy_user_session_path, method: :delete, class: 'nav-link btn btn-outline-success mr-sm-2 text-center') %>
   <% end %>
 </div>

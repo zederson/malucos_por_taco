@@ -37,11 +37,26 @@ class HomeDecorate
     @charts ||= Charts::Service.new(matches)
   end
 
+  def players_losers_zero
+    scouts = scouts_zero
+    extract_players scouts
+  end
+
+  def teams_loser_zero
+    scouts = scouts_zero
+    extract_teams scouts
+  end
+
   def self.decorate(matches)
     new(matches)
   end
 
   private
+
+  def scouts_zero
+    scouts = matches.map(&:loser)
+    scouts.select { |s| s.score.zero? }
+  end
 
   def extract_players(scouts)
     players = scouts.flat_map { |s| s.team.players }

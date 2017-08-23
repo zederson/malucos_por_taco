@@ -61,15 +61,15 @@ ActiveRecord::Base.transaction do
   create_scout('Zé', 'Marco', match, 13, 5, 0, 0, 2, 0, 0, 2)
   create_scout('Felipe', 'Vando', match, 8, 7, 0, 0, 2, 0, 0, 0)
 
-  match = create_match(Time.new(2017, 8, 5, 0, 0), Time.new(2017, 8, 5, 0, 0))
+  match = create_match(Time.new(2017, 8, 5, 9, 0), Time.new(2017, 8, 5, 9, 0))
   create_scout('Zé', 'Marco', match, 7, 3, 0, 0, 1, 0, 0, 0)
   create_scout('Adriano', 'Tacudo', match, 4, 2, 0, 0, 2, 0, 0, 1)
 
-  match = create_match(Time.new(2017, 8, 5, 0, 0), Time.new(2017, 8, 5, 0, 0))
+  match = create_match(Time.new(2017, 8, 5, 9, 0), Time.new(2017, 8, 5, 9, 0))
   create_scout('Zé', 'Marco', match, 3, 0, 0, 0, 0, 1, 0, 2)
   create_scout('Felipe', 'Anselmo', match, 7, 0, 0, 1, 0, 1, 0, 1)
 
-  match = create_match(Time.new(2017, 8, 5, 0, 0), Time.new(2017, 8, 5, 0, 0))
+  match = create_match(Time.new(2017, 8, 5, 9, 0), Time.new(2017, 8, 5, 9, 0))
   create_scout('Felipe', 'Anselmo', match, 7, 0, 0, 0, 0, 0, 0, 0)
   create_scout('Vando', 'Tacudo', match, 0, 0, 0, 0, 0, 0, 0, 0)
 

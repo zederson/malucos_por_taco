@@ -10,7 +10,7 @@ var charts;
     Highcharts.chart(id, {
       title: { text: name },
       subtitle: { text: subtitle() },
-      tooltip: { pointFormat: tooltip + ': <b>{point.y}</b>' },
+      tooltip: { pointFormat: tooltip + ': <b>{point.y} </b><br><b> {point.percentage:.1f} %</b>' },
 
       chart: {
         plotBackgroundColor: null,

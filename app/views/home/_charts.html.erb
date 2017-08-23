@@ -9,6 +9,17 @@
     </div>
   </div>
   <hr>
+
+  <div class="row">
+    <div class="col-md-6">
+      <%= render partial: 'home/charts/pie_charts', locals: { id: 'pie_players_winners', source: @matches.charts.pie_players_winners, title: "#{t 'home.players.title'} #{ t 'home.winners' }", tooltip: t('scout.teams.team.total_winner'), legend: true } %>
+    </div>
+    <div class="col-md-6">
+      <%= render partial: 'home/charts/pie_charts', locals: { id: 'pie_teams_winners', source: @matches.charts.pie_teams_winners, title: "#{t 'home.teams.title'} #{ t 'home.winners' }", tooltip: t('scout.teams.team.total_winner'), legend: false } %>
+    </div>
+  </div>
+  <hr>
+
   <div class="row">
     <div class="col-md-12">
       <%= render partial: 'home/charts/staked_bar', locals: { id: 'staked_bar', source: @matches.charts.staked_bar, title: t('charts.general') } %>

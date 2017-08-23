@@ -1,0 +1,20 @@
+<li class="nav-item">
+  <%= link_to root_path, class: 'nav-link' do %>
+    <i class="fa fa-bar-chart" ></i> <%= t 'navigation.home' %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to players_path, class: 'nav-link' do %>
+    <i class="fa fa-gavel" aria-hidden="true"></i> <%= t 'navigation.players' %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to matches_path, class: 'nav-link' do %>
+    <i class="fa fa-futbol-o" aria-hidden="true"></i> <%= t 'navigation.matches' %>
+  <% end %>
+</li>
+<li class="nav-item">
+  <%= link_to teams_path, class: 'nav-link' do %>
+    <i class="fa fa-renren" aria-hidden="true"></i> <%= t 'navigation.teams' %>
+  <% end %>
+</li>

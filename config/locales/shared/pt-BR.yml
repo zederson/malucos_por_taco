@@ -1,4 +1,10 @@
 pt-BR:
+  title: Malucos por Taco
+  navigation:
+    home: Dashboard
+    players: Jogadores
+    teams: Times
+    matches: Jogos
   match_lasted: A partida durou
   match_time:
     html: Começou <strong>%{started_at}h</strong> e terminou <strong>%{finished_at}h</strong>
@@ -25,6 +31,7 @@ pt-BR:
       one: 'Um jogo'
       other: '%{count} jogos'
   home:
+    quantity: 'Qtd'
     champions: 'Campeão'
     winners: 'Vencedores'
     losers: 'Perdedores'
@@ -37,8 +44,13 @@ pt-BR:
     quantity_temas: 'Quantidade por Time'
     general: 'Dados Gerais'
   scout:
-    score: 'Pontos'
+    score: 'Corridas'
+    loser_zero: Perdeu de ZERO
     teams:
       team:
         total_winner: 'Venceu'
         total_loser: 'Perdeu'
+  teams:
+    team:
+      total_winner: 'Jogos vencidos'
+      total_loser: 'Jogos perdidos'
