@@ -5,6 +5,7 @@ class HomeController < ApplicationController
 
   def show
     search
+    response.headers['X-Frame-Options'] = 'ALLOWALL'
     render layout: 'external'
   end
 
