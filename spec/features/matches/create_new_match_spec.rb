@@ -10,7 +10,7 @@ feature 'Create new Match' do
     players
     visit root_path
 
-    click_on 'Jogos'
+    all('#nav_matches')[1].click
     click_on 'Novo'
 
     find('#match_started_at_4i').find('option[12]').select_option

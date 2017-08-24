@@ -10,7 +10,7 @@ feature 'Editing player' do
     player
     visit root_path
 
-    click_on 'Jogadores'
+    all('#nav_players')[1].click
     click_on 'Editar'
 
     fill_in 'Nome', with: 'Antonio Carlos'
@@ -27,7 +27,7 @@ feature 'Editing player' do
     player
     visit root_path
 
-    click_on 'Jogadores'
+    all('#nav_players')[1].click
     click_on 'Editar'
 
     fill_in 'Nome', with: ''

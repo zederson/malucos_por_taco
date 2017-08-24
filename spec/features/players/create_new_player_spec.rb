@@ -9,7 +9,7 @@ feature 'Create an new player' do
   scenario 'successfully' do
     visit root_path
 
-    click_on 'Jogadores'
+    all('#nav_players')[1].click
     click_on 'Novo'
 
     fill_in 'Nome', with: player.name
