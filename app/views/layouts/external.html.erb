@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Malucos por Taco</title>
+    <meta name="description" content="Malucos por Taco">
+    <meta name="author" content="Ederson de Lima">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+
+  <body>
+    <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+
+    <script type='text/javascript'>
+      <%= yield :javascript %>
+    </script>
+  </body>
+</html>
