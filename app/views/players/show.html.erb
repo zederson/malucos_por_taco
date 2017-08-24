@@ -19,7 +19,7 @@
 
     <div class="profile-content">
       <br>
-      <div class="card-columns row">
+      <div class="row">
         <%= render partial: 'card_total_matches', locals: { total: @player.total_matches, title: t('matches.name') } %>
         <%= render partial: 'card_total_matches', locals: { total: @player.total_teams, title: t('home.teams.title') } %>
         <%= render partial: 'card_total_matches', locals: { total: @player.total_winner, title: t('scout.teams.team.total_winner') } %>
