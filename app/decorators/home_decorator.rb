@@ -1,4 +1,4 @@
-class HomeDecorate
+class HomeDecorator
   attr_reader :matches
 
   def initialize(matches)

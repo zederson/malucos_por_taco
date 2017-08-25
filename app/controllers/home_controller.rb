@@ -13,7 +13,7 @@ class HomeController < ApplicationController
 
   def search
     matches = Match::SearchService.by_started(search_param)
-    @matches = HomeDecorate.decorate(matches)
+    @matches = HomeDecorator.decorate(matches)
   end
 
   def search_param

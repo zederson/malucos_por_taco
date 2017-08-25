@@ -13,4 +13,8 @@ class Scout < ApplicationRecord
   def loser?
     !winner?
   end
+
+  def self.keys
+    %i[run back lost_ball bat_delivery house burned victory concierge]
+  end
 end

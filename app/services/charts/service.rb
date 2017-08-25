@@ -15,11 +15,15 @@ module Charts
     end
 
     def pie_teams_winners
-      @pie_teams_winners ||= QuantityWinnersService.new(matches, target: :teams).run
+      @pie_teams_winners ||= begin
+        QuantityWinnersService.new(matches, target: :teams).run
+      end
     end
 
     def pie_players_winners
-      @pie_players_winners ||= QuantityWinnersService.new(matches, target: :players).run
+      @pie_players_winners ||= begin
+        QuantityWinnersService.new(matches, target: :players).run
+      end
     end
 
     def staked_bar

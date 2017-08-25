@@ -18,7 +18,9 @@ class TeamDecorator < Draper::Decorator
   end
 
   def keys
-    %i[back lost_ball bat_delivery house burned victory concierge]
+    values = Scout.keys
+    values.delete(:run)
+    values
   end
 
   def total_for(key)
