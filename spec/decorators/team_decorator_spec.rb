@@ -9,7 +9,9 @@ RSpec.describe TeamDecorator do
   let(:team) do
     p1 = Player.find_by(nick_name: 'Zé')
     p2 = Player.find_by(nick_name: 'Marco')
-    teams = Team.joins(:integrants).where('integrants.player_id in (?)', [p1.id, p2.id])
+
+    condition = 'integrants.player_id in (?)'
+    teams = Team.joins(:integrants).where(condition, [p1.id, p2.id])
     teams.select { |t| t.title == 'Zé - Marco' }.first
   end
 
@@ -36,7 +38,10 @@ RSpec.describe TeamDecorator do
   end
 
   describe '#keys' do
-    let(:keys) { %i[back lost_ball bat_delivery house burned victory concierge] }
+    let(:keys) do
+      %i[back lost_ball bat_delivery
+         house burned victory concierge]
+    end
     subject { decorator.keys }
     it { is_expected.to eq keys }
   end

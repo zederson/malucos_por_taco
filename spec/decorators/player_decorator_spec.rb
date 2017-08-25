@@ -1,14 +1,13 @@
 require 'rails_helper'
 require 'support/database'
 
-
 RSpec.describe PlayerDecorator do
   include Database
 
   before(:all) { Rails.application.load_seed }
   after(:all) { clear_database }
 
-  let(:player) { Player.find_by_name 'Ederson de Lima' }
+  let(:player) { Player.find_by name: 'Ederson de Lima' }
   let(:decorator) { PlayerDecorator.new(player) }
 
   describe '#total_teams' do
