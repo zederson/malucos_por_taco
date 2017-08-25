@@ -22,8 +22,7 @@ class Match
     end
 
     def scout_params(team)
-      vals = %i[id run back lost_ball bat_delivery
-                house burned victory concierge]
+      vals = Scout.keys << :id
       params.require("scout_#{team}").permit(vals)
     end
   end
