@@ -4,7 +4,10 @@ module Charts
       { data: build }
     end
 
+    private
+
     def build
+      return [] if options.blank? || options[:target].blank?
       group.map do |_k, v|
         { name: v.first.title, y: v.size }
       end

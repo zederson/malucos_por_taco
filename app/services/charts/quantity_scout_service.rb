@@ -4,6 +4,8 @@ module Charts
       { items: build, categories: categories }
     end
 
+    private
+
     def build
       summarize.map do |item|
         { name: item[:name], data: build_data(item) }

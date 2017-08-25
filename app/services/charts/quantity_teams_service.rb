@@ -4,6 +4,8 @@ module Charts
       { data: build }
     end
 
+    private
+
     def build
       group.map do |_k, v|
         { name: v.first.title, y: v.size }
