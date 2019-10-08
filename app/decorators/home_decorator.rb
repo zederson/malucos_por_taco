@@ -19,8 +19,7 @@ class HomeDecorator
 
   def count_players
     scouts  = matches.flat_map(&:scouts)
-    players = extract_players scouts
-    players.size
+    extract_players(scouts).size
   end
 
   def teams_winner
@@ -55,11 +54,11 @@ class HomeDecorator
 
   def scouts_zero
     scouts = matches.map(&:loser)
-    scouts.select { |s| s.score.zero? }
+    scouts.select { |scout| scout.score.zero? }
   end
 
   def extract_players(scouts)
-    players = scouts.flat_map { |s| s.team.players }
+    players = scouts.flat_map { |scout| scout.team.players }
     group_and_order players
   end
 
@@ -70,7 +69,7 @@ class HomeDecorator
 
   def group_and_order(list)
     grouped = list.group_by(&:id)
-    ordered = grouped.map { |_k, v| [v.first.title, v.size] }
+    ordered = grouped.map { |_k, value| [value.first.title, value.size] }
     sort_players ordered
   end
 

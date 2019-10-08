@@ -1,11 +1,12 @@
 class HomeController < ApplicationController
+  ALLOWALL = 'ALLOWALL'.freeze
   def index
     search
   end
 
   def show
     search
-    response.headers['X-Frame-Options'] = 'ALLOWALL'
+    response.headers['X-Frame-Options'] = ALLOWALL
     render layout: 'external'
   end
 
